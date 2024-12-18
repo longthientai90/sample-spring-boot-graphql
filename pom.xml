@@ -16,6 +16,7 @@
 
     <modules>
         <module>spring-graphql</module>
+		<module>product-search</module>
     </modules>
 
     <properties>

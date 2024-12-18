@@ -1,0 +1,33 @@
+extend type Query {
+    products: [Product]
+    productsWithFilter(filter: ProductFilter): [Product]
+    product(id: ID!): Product!
+}
+
+type Product {
+    id: ID!
+    name: String!
+    image: String!
+    price: Int!
+    color: String!
+    material: String!
+    description: String
+    category: Category
+}
+
+input ProductFilter {
+    pageNumber: Int!
+    pageSize: Int!
+    category: FilterField
+    name: FilterField
+    price: FilterField
+    color: FilterField
+    material: FilterField
+    isDetail: Boolean
+    sourceFrom: Int # 0: from mysql, 1: from cache, 2: from redis
+}
+
+input FilterField {
+    operator: String!
+    value: String!
+}
