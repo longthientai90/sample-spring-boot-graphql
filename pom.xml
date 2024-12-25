@@ -15,8 +15,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>spring-graphql</module>
-		<module>product-search</module>
+        <module>starter-graphql</module>
+        <module>advanced-graphql</module>
+        <module>product-search</module>
     </modules>
 
     <properties>
