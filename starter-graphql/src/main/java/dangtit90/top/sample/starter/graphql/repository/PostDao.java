@@ -1,5 +1,6 @@
 package dangtit90.top.sample.starter.graphql.repository;
 
+import dangtit90.top.sample.starter.graphql.domain.model.Author;
 import dangtit90.top.sample.starter.graphql.domain.model.Post;
 
 import java.util.List;
@@ -28,5 +29,12 @@ public class PostDao {
 
     public void savePost(Post post) {
         posts.add(post);
+    }
+
+    public Post getPost(String id) {
+        return posts.stream()
+                .filter(post -> id.equals(post.getId()))
+                .findFirst()
+                .orElseThrow(RuntimeException::new);
     }
 }

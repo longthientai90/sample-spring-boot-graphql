@@ -25,6 +25,11 @@ public class PostController {
     }
 
     @QueryMapping
+    public Post getPost(@Argument String id) {
+        return postDao.getPost(id);
+    }
+
+    @QueryMapping
     public List<Post> recentPosts(@Argument int count, @Argument int offset) {
         return postDao.getRecentPosts(count, offset);
     }
